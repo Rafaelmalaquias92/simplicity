@@ -108,3 +108,18 @@ a {
     flex-direction: column;
     justify-content: center; 
 }
+
+/* Etapa 1: Criar regra de animações */
+@keyframes animaDestaque {
+    /* Dê (Como começa) */
+    from{ opacity: 0; transform:  scale(0.5);}
+    /* Para (Como termina) */
+    to{opacity: 1;transform: scale(1);}
+}
+/* Etapa 2: Aplicar a animação */
+.destaque h2, .destaque p{
+animation-name: animaDestaque;
+animation-duration: 3s;
+/* animation-iteration-count: infinite; */
+/* -o-animation-direction: alternate; */
+}
