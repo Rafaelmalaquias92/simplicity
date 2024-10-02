@@ -191,3 +191,27 @@ article address {
     font-size: 1.8rem;
     border-bottom: solid 1px;
 }
+table {
+    border: solid 4px var(--cor-escura);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    /* remove o espacamento dentro da tabela */
+    /* border-collapse: collapse; */
+}
+caption {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-bottom: 0.3rem;
+}
+td, th { border: solid 1px var(--cor-escura);}
+th {
+    background-color: var(--cor-escura);
+    color:var(--cor-clara);
+    padding: 0.5rem;
+}
+td { padding: 0.4rem;}
+td:nth-child(2){text-align: center;}
+td:last-child, tr:last-child { text-align:right;}
+/* Selecionando linhas alternadas, podendo ser even (par) ou odd(impár) */
+tr:nth-child(even){ background-color: var(--cor-clara);}
