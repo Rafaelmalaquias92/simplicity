@@ -59,11 +59,12 @@ a {
 
 .topo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: var(--cor-clara);
+
 }
 
 .titulo-menu a {
@@ -215,3 +216,9 @@ td:nth-child(2){text-align: center;}
 td:last-child, tr:last-child { text-align:right;}
 /* Selecionando linhas alternadas, podendo ser even (par) ou odd(impár) */
 tr:nth-child(even){ background-color: var(--cor-clara);}
+
+.limitador {
+    width: 95vw;
+    max-width: 1000px;
+    margin: auto;
+}
