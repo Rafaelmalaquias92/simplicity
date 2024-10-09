@@ -64,12 +64,14 @@ a {
     background-color: var(--cor-clara);
     z-index: 10;
 }
+
 /* DIV com a classe limitador DENTRO do topo (sub-cabeçalho): aplicamos os ajustres de layout (flex) */
 .topo .limitador {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 /* Classe que será aplicada em algumas partes do site visando criar limites de tamanhos */
 .limitador {
     width: 95vw;
@@ -276,7 +278,7 @@ tr:nth-child(even) {
 
 .galeria {
     text-align: center;
- 
+
 }
 
 .galeria img {
@@ -285,6 +287,37 @@ tr:nth-child(even) {
     transform: scale(0.8) rotate(-20deg);
     transition: 0.5s;
 }
- .galeria img:hover{
+
+.galeria img:hover {
     transform: scale(1);
- }
+}
+
+/* Regras Condicionais usando Media Queries */
+@media screen and (min-width: 600px) {
+
+    /* Escondendo a palavra Menu */
+    .titulo-menu {
+        display: none;
+    }
+
+    /* Exibingo os links do Menu */
+    .links-menu {
+        display: flex;
+       
+    }
+
+    /* Ajustamos o tamanho do menu (nav) fazendo-o "Esticar", aumentando o espaçamento dentro dele.*/
+    .menu {
+        width: 60%;
+    }
+
+    /* Forçamos cada item (li) da lista a ter largura total e, com isso, redistribuir e ocupar os espaços entre os links do menu (nav)*/
+    .links-menu li {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    html {font-size: 20px;}
+    .limitador { height: 100px;}
+}
