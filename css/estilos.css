@@ -58,12 +58,24 @@ a {
 }
 
 .topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     position: sticky;
     top: 0;
     background-color: var(--cor-clara);
+    z-index: 10;
+}
+/* DIV com a classe limitador DENTRO do topo (sub-cabeçalho): aplicamos os ajustres de layout (flex) */
+.topo .limitador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Classe que será aplicada em algumas partes do site visando criar limites de tamanhos */
+.limitador {
+    width: 95vw;
+    max-width: 1000px;
+    margin: auto;
+
 
 }
 
@@ -105,62 +117,84 @@ a {
 .destaque {
     height: 75vh;
     background-image: url(../imagens/fundo-destaque.jpg);
-    background-attachment: fixed ;
-    color:var(--cor-clara);
+    background-attachment: fixed;
+    color: var(--cor-clara);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
 }
 
 /* Etapa 1: Criar regra de animações */
 @keyframes animaDestaque {
+
     /* Dê (Como começa) */
-    from{ opacity: 0; transform:  scale(0.5);}
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
     /* Para (Como termina) */
-    to{opacity: 1;transform: scale(1);}
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
 /* Etapa 2: Aplicar a animação */
-.destaque h2, .destaque p{
+.destaque h2,
+.destaque p {
     color: var(--cor-clara);
-animation-name: animaDestaque;
-animation-duration: 2s;
-/* animation-iteration-count: infinite; */
-/* -o-animation-direction: alternate; */
+    animation-name: animaDestaque;
+    animation-duration: 2s;
+    /* animation-iteration-count: infinite; */
+    /* -o-animation-direction: alternate; */
 }
+
 /*  Função clamp() ○ 137 Usada para definir um valor que se ajusta dinamicamente 138] entre um valor MÍNIMO, IDEAL/FLEXÍVEL/VARIÁVEL e MÁXIMO */
 
-.destaque h2 { font-size: clamp(3rem, 10vw, 7rem); } 
-.destaque p { font-size: clamp(1.5rem, 3vw, 3rem); } 
- 
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 7rem);
+}
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
 article h2 {
     padding: 1rem;
     font-size: 1.4rem;
     font-family: Raleway, sans-serif;
     color: var(--cor-titulo);
 }
+
 article p {
     padding: 0.5rem 0;
     font-size: 1.2rem;
 }
+
 article address {
     font-style: normal;
     font-size: 1.2rem;
 }
-.front-end, .historia, .localizacao {
+
+.front-end,
+.historia,
+.localizacao {
     text-align: center;
 }
+
 .historia {
-    background-image: url(../imagens/fundo-madeira.jpg); 
+    background-image: url(../imagens/fundo-madeira.jpg);
     background-size: cover;
     background-attachment: fixed;
-    
+
 }
 
-.historia iframe  {
+.historia iframe {
     width: 100%;
     max-width: 700px;
-    margin-bottom: 2rem; 
+    margin-bottom: 2rem;
 }
 
 .historia h2 {
@@ -169,29 +203,33 @@ article address {
 }
 
 .localizacao iframe {
-        width: 100%;
-        margin-top: 2rem;
+    width: 100%;
+    margin-top: 2rem;
 }
+
 .rodape {
     background-color: #333;
     color: #fff;
-    height: 30vh; 
-    font-weight: bold; 
-    display: flex; 
-    align-items: center; 
+    height: 30vh;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
 }
+
 /* Refras para demais paginas (Produtos, Serviços e Contato) */
 .conteudo-geral {
     background-color: var(--cor-intermediaria);
     padding: 0.5rem;
 }
+
 .conteudo-geral h2 {
     padding-left: 0;
     font-size: 1.8rem;
     border-bottom: solid 1px;
 }
+
 table {
     border: solid 4px var(--cor-escura);
     width: 80%;
@@ -200,25 +238,53 @@ table {
     /* remove o espacamento dentro da tabela */
     /* border-collapse: collapse; */
 }
+
 caption {
     text-transform: uppercase;
     font-size: 1.2rem;
     padding-bottom: 0.3rem;
 }
-td, th { border: solid 1px var(--cor-escura);}
+
+td,
+th {
+    border: solid 1px var(--cor-escura);
+}
+
 th {
     background-color: var(--cor-escura);
-    color:var(--cor-clara);
+    color: var(--cor-clara);
     padding: 0.5rem;
 }
-td { padding: 0.4rem;}
-td:nth-child(2){text-align: center;}
-td:last-child, tr:last-child { text-align:right;}
-/* Selecionando linhas alternadas, podendo ser even (par) ou odd(impár) */
-tr:nth-child(even){ background-color: var(--cor-clara);}
 
-.limitador {
-    width: 95vw;
-    max-width: 1000px;
-    margin: auto;
+td {
+    padding: 0.4rem;
 }
+
+td:nth-child(2) {
+    text-align: center;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
+}
+
+/* Selecionando linhas alternadas, podendo ser even (par) ou odd(impár) */
+tr:nth-child(even) {
+    background-color: var(--cor-clara);
+}
+
+.galeria {
+    text-align: center;
+ 
+}
+
+.galeria img {
+    border-radius: 50%;
+    box-shadow: var(--cor-escura) 0px 0px 10px;
+    transform: scale(0.8) rotate(-20deg);
+    transition: 0.5s;
+}
+ .galeria img:hover{
+    transform: scale(1);
+ }
